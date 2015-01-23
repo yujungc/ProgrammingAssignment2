@@ -1,8 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The following two functions basically allows the user to input a square matrix (only square matrix has inverse), and gives and output of its inverse matrix. If the matrix is newly input, then it calculates and store this value in the cache. However, if the value of the inverse matrix is already computed and stored for the input matrix, then calculation is skipped and the value is cached and return.
 
-## Write a short comment describing this function
-
+## the "makeCahceMatrix" function creates the matrix, and is a list of functions to perform the following:
+## "set" : It sets the value of the matrix
+## "get": get the value of the matrix
+## "setinverse": get the value of the inverse matrix
+## "getinverse": finally get the value of the inverse matrix.
 makeCacheMatrix <- function(x = matrix) {
 	i <- NULL
 
@@ -18,7 +20,7 @@ makeCacheMatrix <- function(x = matrix) {
 		getinverse = getinverse)
 }
 
-## Write a short comment describing this function
+## the following function calculates the inverse of the matrix given by the "makeCacheMatrix" function. It first checks if the inverse matrix has already been calculated. If it is, it skips the computation and directly cache the inverse matrix in the variable "i" of "makeCacheMatrix" function. Otherwise, it calculates the inverse matrix of the input matrix and stores it in the cache "i". Finally, it returns the inverse matrix, "i".
 
 cacheSolve <- function(x, ...) {
 	i <- x$getinverse()
